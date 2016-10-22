@@ -1,4 +1,4 @@
-// Vanilla JS version (4506 bytes minified), jQuery version - see below
+// Vanilla JS version (4986 bytes minified), jQuery version - see below
 
 (function() {
 
@@ -8,14 +8,40 @@
 
   window.addEventListener('load', function() {
 
-    var body = document.getElementsByTagName('body')[0],
-      loader = body.getElementsByClassName('loader-wrapper')[0];
+    var loader = document.getElementsByClassName('loader-wrapper')[0],
+      loaderCircle = document.getElementsByClassName('loader')[0];
 
     setTimeout(function() {
-      loader.style.opacity = '0';
-      loader.style.visibility = 'hidden';
-      body.style.overflowY = 'auto';
+
+      if (loader.classList) {
+        loader.classList.add('active');
+      } else {
+        loader.className += ' ' + 'active';
+      }
+
+      loaderCircle.style.opacity = 0;
+      loaderCircle.style.visibility = 'hidden';
+
+      if (window.outerWidth >= 992) {
+        loader.style.webkitTransform = 'translateX(350px)';
+        loader.style.transform = 'translateX(350px)';
+      } else {
+        loader.style.webkitTransform = 'translateY(100%)';
+        loader.style.transform = 'translateY(100%)';
+      }
     }, 500);
+
+    setTimeout(function() {
+      if (window.outerWidth >= 992) {
+        loader.style.webkitTransform = 'translateX(350px) translateY(100%)';
+        loader.style.transform = 'translateX(350px) translateY(100%)';
+      }
+    }, 1200);
+
+    setTimeout(function() {
+      loader.style.opacity = 0;
+      loader.style.visibility = 'hidden';
+    }, 1700);
 
   });
 
@@ -258,7 +284,7 @@
 
 }());
 
-/* jQuery version (2115 bytes minified + ~100KB library ;))
+/* jQuery version (2498 bytes minified + ~100KB library ;))
 
 (function($, window, document) {
 
@@ -268,16 +294,47 @@
 
   $(window).load(function() {
 
-    var $body = $('body'),
-      $loader = $body.find('.loader-wrapper');
+    var $loader = $('.loader-wrapper'),
+      $loaderCircle = $('.loader');
+
+    setTimeout(function() {
+
+      $loader.addClass('active');
+
+      $loaderCircle.css({
+        opacity: 0,
+        visibility: 'hidden'
+      });
+
+      if ($(window).width() >= 992) {
+        $loader.css({
+          webkitTransform: 'translateX(350px)',
+          transform: 'translateX(350px)'
+        });
+      } else {
+        $loader.css({
+          webkitTransform: 'translateY(100%)',
+          transform: 'translateY(100%)'
+        });
+      }
+
+    }, 500);
+
+    setTimeout(function() {
+      if ($(window).width() >= 992) {
+        $loader.css({
+          webkitTransform: 'translateX(350px) translateY(100%)',
+          transform: 'translateX(350px) translateY(100%)'
+        });
+      }
+    }, 1200);
 
     setTimeout(function() {
       $loader.css({
         opacity: 0,
         visibility: 'hidden'
       });
-      $body.css('overflow-y', 'auto');
-    }, 500);
+    }, 1700);
 
   });
 

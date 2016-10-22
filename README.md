@@ -70,7 +70,8 @@ Not really, I think the purpose of this contest is to learn something new (maybe
 
 ## Page speed test
 
-* [GTMetrix] - total page size - 225KB, page load time - ~0,7s
+* [GTMetrix vanilla JS] - total page size - 225KB, page load time - ~0,7s
+* [GTMetrix jQuery] - total page size - 313KB, page load time - ~0.9s
 
 ## Credits
 
@@ -97,7 +98,8 @@ Not really, I think the purpose of this contest is to learn something new (maybe
 [DonTheDeveloper]: <https://www.twitch.tv/donthedeveloper>
 [padding hack]: <http://andyshora.com/css-image-container-padding-hack.html>
 [TwitchCon 2016 website]: <http://www.twitchcon.com/>
-[GTMetrix]: <https://gtmetrix.com/reports/doncsscontest.herokuapp.com/9bwzEr6K>
+[GTMetrix vanilla JS]: <https://gtmetrix.com/reports/doncsscontest.herokuapp.com/9bwzEr6K>
+[GTMetrix jQuery]: <https://gtmetrix.com/reports/doncsscontest.herokuapp.com/zb0tkLUE>
 [CSShake]: <https://elrumordelaluz.github.io/csshake/>
 [@elrumordelaluz]: <https://twitter.com/elrumordelaluz>
 [Glitch Effect on Text / Images / SVG]: <https://css-tricks.com/glitch-effect-text-images-svg/>
